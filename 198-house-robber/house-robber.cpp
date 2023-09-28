@@ -5,8 +5,9 @@ public:
         int prev2 = nums[0];
         int prev1 = max(nums[0], nums[1]);
         if(nums.size()==2)  return prev1;
+        int res = INT_MIN;
         for(int i=2; i<nums.size(); ++i){
-            int res = max(nums[i] + prev2, prev1);
+            res = max(nums[i] + prev2, prev1);
             prev2 = prev1;
             prev1 = res;
         }
